@@ -2,7 +2,7 @@ import java.util.*;
 import java.util.HashMap;
 
 class Inventory {
-    HashMap<String, String> items = new HashMap<String, String>();
+    HashMap<String, Integer> items = new HashMap<String, Integer>();
 }
 // adding item
 public void AddItem(String item, int quantity){
