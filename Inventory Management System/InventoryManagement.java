@@ -4,7 +4,7 @@ class Inventory {
 
 }
 
-class InventoryManagement {
+public class InventoryManagement {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
