@@ -4,10 +4,10 @@ This repository contains the case study files for our Object-Oriented Programmin
 
 ## Table of Contents
 
-- Introduction
-- Folder Structure
-- Case Study Overview
-- Our Team
+- [Introduction](https://github.com/ImShawnTheSheep/OOP-CaseStudy#introduction)
+- [Folder Structure](https://github.com/ImShawnTheSheep/OOP-CaseStudy#folder-structure)
+- [Case Study Overview](https://github.com/ImShawnTheSheep/OOP-CaseStudy#case-study-overview)
+- [Our Team](https://github.com/ImShawnTheSheep/OOP-CaseStudy#our-team)
 
 ## Introduction
 
@@ -32,29 +32,30 @@ In this case study, we explore implementation of two real-world systems using ob
 
 ### Case Study 1: Inventory Management System
 
-Create a Java program that allows users to manage an inventory by adding items with their respective quantities, removing items from the inventory, and checking the quantity of items in the inventory. If one transaction is done (for example, after adding 1 item to the inventory), the user must be allowed to choose another action until the user chooses to exit the program. 
+Create a Java program that allows users to manage an inventory by adding items with their respective quantities, removing items from the inventory, and checking the quantity of items in the inventory. If one transaction is done (for example, after adding 1 item to the inventory), the user must be allowed to choose another action until the user chooses to exit the program.
 
-It must use an ***Inventory*** class to manage the items and an ***InventoryManagement*** class for the user interface (console). 
+It must use an **_Inventory_** class to manage the items and an **_InventoryManagement_** class for the user interface (console).
 
 The details inputted by the user after the program execution is **not required** to be persistent.
 
 ### Case Study 2: Library Management System
 
-Create a Java program that simulates a library management system where users can add books, remove books, display available books, borrow books, and return books. If one transaction is done (for example, after adding 1 book), the user must be allowed to choose another action until the user chooses to exit the program. 
+Create a Java program that simulates a library management system where users can add books, remove books, display available books, borrow books, and return books. If one transaction is done (for example, after adding 1 book), the user must be allowed to choose another action until the user chooses to exit the program.
 
-It must use a ***Book*** class to represent a book and a ***Library*** class to manage the books and their availability. Also, use a ***LibraryManagement*** class that will act as the user interface (console) for interacting with the system. 
+It must use a **_Book_** class to represent a book and a **_Library_** class to manage the books and their availability. Also, use a **_LibraryManagement_** class that will act as the user interface (console) for interacting with the system.
 
-Additional Requirements: 
+Additional Requirements:
+
 - The book’s attributes must include an ID, title, author, and availability status.
 - The book’s ID must be automatically incremented.
 - In returning, borrowing, and returning books, the user must be only allowed to input the book’s ID.
-- The program must utilize the practice of using proper modifiers and encapsulation. 
+- The program must utilize the practice of using proper modifiers and encapsulation.
 
 The details inputted by the user after the program execution is **not required** to be persistent.
 
 ## Our Team
 
-- **Jumawan, Shawn Michael** (*Lead Developer/Project Manager*)
-- **Domingo, Kirsten Charles** (*Senior Developer/UI Lead*)
-- **Lopez, Maui Mark Daniel** (*Junior Developer/UX Lead*)
-- **Baledoya, Kyla Keith** (*Junior Developer/Documentation Lead*)
+- **Jumawan, Shawn Michael** (_Lead Developer/Project Manager_)
+- **Domingo, Kirsten Charles** (_Senior Developer/UI Lead_)
+- **Lopez, Maui Mark Daniel** (_Junior Developer/UX Lead_)
+- **Baledoya, Kyla Keith** (_Junior Developer/Documentation Lead_)
