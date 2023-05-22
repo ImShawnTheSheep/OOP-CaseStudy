@@ -12,7 +12,7 @@ class Inventory {
     // removing item
     public void DeleteItem(String item, int quantity) {
         items.remove(item, quantity);
-        System.out.println(item + "with a number of" + quantity + "has been remove.")
+        System.out.println(item + "with a number of" + quantity + "has been remove.");
     }
 }
 
