@@ -20,7 +20,6 @@ public class InventoryManagement {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
         boolean exit = false;
         while (!exit) {
             System.out.println("Inventory Management System");
