@@ -55,45 +55,52 @@ The details inputted by the user after the program execution is **not required**
 
 ## Our Team
 <div align="center">
-  <img
+  <div style="display: inline-block;">
+    <img
     src="https://github.com/ImShawnTheSheep/OOP-CaseStudy/blob/assets/shawn.jpg"
     alt="Jumawan, Shawn Michael"
     width="250"
     height="250"
-  />
-  <p><b>Jumawan, Shawn Michael </b><i>(Lead Developer, Project Manager)</i></p>
-</div>
-
-<div align="center">
-  <img
+    />
+    <p>
+      <b>Jumawan, Shawn Michael </b>
+      <i>(Lead Developer, Project Manager)</i>
+    </p>
+  </div>
+  <div style="display: inline-block;">
+    <img
     src="https://github.com/ImShawnTheSheep/OOP-CaseStudy/blob/assets/kc.jpg"
     alt="Domingo, Kirsten Charles"
     width="250"
     height="250"
-  />
-  <p>
-    <b>Domingo, Kirsten Charles </b><i>(Senior Developer, UI Design Lead)</i>
-  </p>
-</div>
-
-<div align="center">
-  <img
-    src="https://github.com/ImShawnTheSheep/OOP-CaseStudy/blob/assets/mao.jpg"
-    alt="Lopez, Maui Mark Daniel"
-    width="250"
-    height="250"
-  />
-  <p>
-    <b>Lopez, Maui Mark Daniel </b><i>(Senior Developer, Backend Lead)</i>
-  </p>
-</div>
-
-<div align="center">
-  <img
+    />
+    <p>
+      <b>Domingo, Kirsten Charles</b>
+      <i>(Senior Developer, UI Design Lead)</i>
+    </p>
+  </div>
+  <div style="display: inline-block;">
+    <img
+        src="https://github.com/ImShawnTheSheep/OOP-CaseStudy/blob/assets/mao.jpg"
+        alt="Lopez, Maui Mark Daniel"
+        width="250"
+        height="250"
+      />
+    <p>
+      <b>Lopez, Maui Mark Daniel </b>
+      <i>(Senior Developer, Backend Lead)</i>
+    </p>
+  </div>
+  <div style="display: inline-block;">
+    <img
     src="https://github.com/ImShawnTheSheep/OOP-CaseStudy/blob/assets/kyla.jpg"
     alt="Baledoya, Kyla Keith"
     width="250"
     height="250"
-  />
-  <p><b>Baledoya, Kyla Keith </b><i>(Junior Developer, Documentation Lead)</i></p>
+    />
+    <p>
+      <b>Baledoya, Kyla Keith </b>
+      <i>(Junior Developer, Documentation Lead)</i>
+    </p>
+  </div>
 </div>
