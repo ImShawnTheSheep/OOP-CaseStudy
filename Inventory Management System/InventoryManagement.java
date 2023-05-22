@@ -14,6 +14,10 @@ class Inventory {
         items.remove(item, quantity);
         System.out.println(item + "with a number of"quantity + "has been remove.")
     }
+    public void AccessItem(String item, int quantity){
+        items.get(item, quantity);
+        System.out.println(item + "have a number of" + quantity )
+    }
 }
 
 public class InventoryManagement {
