@@ -55,7 +55,7 @@ The details inputted by the user after the program execution is **not required**
 
 ## Our Team
 <div align="center">
-  <div style="display: inline-block;">
+  <div>
     <img
     src="https://github.com/ImShawnTheSheep/OOP-CaseStudy/blob/assets/shawn.jpg"
     alt="Jumawan, Shawn Michael"
@@ -79,7 +79,7 @@ The details inputted by the user after the program execution is **not required**
       <i>(Senior Developer, UI Design Lead)</i>
     </p>
   </div>
-  <div style="display: inline-block;">
+  <div>
     <img
         src="https://github.com/ImShawnTheSheep/OOP-CaseStudy/blob/assets/mao.jpg"
         alt="Lopez, Maui Mark Daniel"
@@ -91,7 +91,7 @@ The details inputted by the user after the program execution is **not required**
       <i>(Senior Developer, Backend Lead)</i>
     </p>
   </div>
-  <div style="display: inline-block;">
+  <div>
     <img
     src="https://github.com/ImShawnTheSheep/OOP-CaseStudy/blob/assets/kyla.jpg"
     alt="Baledoya, Kyla Keith"
