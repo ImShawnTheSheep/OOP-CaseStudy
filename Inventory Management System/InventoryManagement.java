@@ -110,6 +110,7 @@ public class InventoryManagement {
                     /* terminates loop from while loop in main */
                 default:
                     System.out.println("The choice you have chosen is either not available from the list \n or is not valid. ");
+                    break;
             }
         }
         input.close();
