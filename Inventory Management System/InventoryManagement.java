@@ -7,12 +7,12 @@ class Inventory {
     // adding item
     public void AddItem(String item, int quantity){
         items.put(item, quantity);
-        System.out.println(item + "with a number of" quantity + "has been added.");
+        System.out.println(item + "with a number of" + quantity + "has been added.");
     }
     // removing item
     public void DeleteItem(String item, int quantity) {
         items.remove(item, quantity);
-        System.out.println(item + "with a number of"quantity + "has been remove.")
+        System.out.println(item + "with a number of" + quantity + "has been remove.")
     }
 }
 
