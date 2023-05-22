@@ -67,7 +67,7 @@ The details inputted by the user after the program execution is **not required**
       <i>(Lead Developer, Project Manager)</i>
     </p>
   </div>
-  <div style="display: inline-block;">
+  <div>
     <img
     src="https://github.com/ImShawnTheSheep/OOP-CaseStudy/blob/assets/kc.jpg"
     alt="Domingo, Kirsten Charles"
