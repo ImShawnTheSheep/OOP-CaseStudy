@@ -89,18 +89,15 @@ public class InventoryManagement {
             /* switch case choices, from 1 - 4, and default when user inputs invalid data */
             switch(choice) {
                 case 1:
-                    insertItemQuantity(); 
-                    // calls insertItemQuantity method
+                    insertItemQuantity();
                     pause();
                     break;
                 case 2:
                     deleteItemQuantity(); 
-                    // calls deleteItemQuantity
                     pause();
                     break;
                 case 3:
-                    checkItemQuantity(); 
-                    // calls checkItemQuantity
+                    checkItemQuantity();
                     pause();
                     break;
                 case 4:
