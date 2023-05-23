@@ -104,26 +104,14 @@ public class InventoryManagement {
             switch (choice) {
                 case 1:
                     insertItemQuantity();
-                    insertItemQuantity();
-                    // calls insertItemQuantity method
-                    insertItemQuantity();
-                    // calls insertItemQuantity method
                     pause();
                     break;
                 case 2:
                     deleteItemQuantity();
-                    deleteItemQuantity();
-                    // calls deleteItemQuantity
-                    deleteItemQuantity();
-                    // calls deleteItemQuantity
                     pause();
                     break;
                 case 3:
                     checkItemQuantity();
-                    checkItemQuantity();
-                    // calls checkItemQuantity
-                    checkItemQuantity();
-                    // calls checkItemQuantity
                     pause();
                     break;
                 case 4:
