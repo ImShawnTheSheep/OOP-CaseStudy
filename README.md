@@ -1,4 +1,4 @@
-# Group 1 - OOP Case Study
+# Group 4 - OOP Case Study
 
 This repository contains the case study files for our Object-Oriented Programming (OOP) subject. The case study focuses on applying OOP principles and concepts to solve real-world problems.
 
@@ -54,6 +54,7 @@ Additional Requirements:
 The details inputted by the user after the program execution is **not required** to be persistent.
 
 ## Our Team
+
 <div align="center">
   <div>
     <img
