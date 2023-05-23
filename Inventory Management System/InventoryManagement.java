@@ -24,8 +24,13 @@ class Inventory {
     }
     
     // check item
-    public void checkItemQuantity(String item, int quantity) {
-        // prototyping
+    public void checkItemQuantity(String item) {
+        if (items.containsKey(item)) {
+            int quantity = items.get(item);
+            System.out.println(item + " has a quantity of " + quantity);
+        } else {
+            System.out.println(item + " does not exist in the inventory.");
+        }
     }
 }
 
@@ -71,7 +76,7 @@ public class InventoryManagement {
             inventory.removeItem(removeItem, removeQuantity);
             input.nextLine(); // clears buffer for next input
 
-            System.out.print("Would you like to add another item? (Y/N): ");
+            System.out.print("Would you like to remove another item? (Y/N): ");
             String choice = input.nextLine();
 
             if (choice.equalsIgnoreCase("N")) {
@@ -80,10 +85,15 @@ public class InventoryManagement {
         } while (!exit);
     }
 
-    /* prototype method calling from InventoryManagement Class */
+    /* static method to call object from Inventory--calls checking method */
     private static void checkItemQuantity() {
         clearScreen();
-    }
+        System.out.print("Enter the name of the item you would like to check: ");
+        String item = input.nextLine();
+
+        inventory.checkItemQuantity(item);
+
+        pause(); }
 
     /* main method containing the menu console UI, and switch case operations */
     public static void main(String[] args) {
@@ -92,13 +102,12 @@ public class InventoryManagement {
             clearScreen();
 
             // UI (console)
-            System.out.println("Inventory Management System");
-            System.out.println("----------------------------------------------------");
+            System.out.println("+-----------------------------+");            System.out.println("| Inventory Management System |");System.out.println("+-----------------------------+");
             System.out.println("1. Add item");
             System.out.println("2. Remove item");
             System.out.println("3. Check item quantity");
             System.out.println("4. Exit");
-            System.out.println("----------------------------------------------------");
+            System.out.println("-------------------------------");
             System.out.print("Enter your choice: ");
             int choice = input.nextInt();
             input.nextLine(); // clears buffer for next input
@@ -118,7 +127,7 @@ public class InventoryManagement {
                     pause();
                     break;
                 case 4:
-                    System.out.print("You have chosen to exit this program.");
+                    System.out.println("You have chosen to exit this program.");
                     exit = true;
                     break;
                 /* terminates loop from while loop in main */
