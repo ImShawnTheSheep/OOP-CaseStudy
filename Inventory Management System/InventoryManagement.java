@@ -61,7 +61,7 @@ public class InventoryManagement {
         System.out.print("Enter the quantity of the item you would like to delete: ");
         int removeQuantity = input.nextInt();
 
-        myObj.deleteItem(removeItem, removeQuantity);
+        myObj.removeItem(removeItem, removeQuantity);
         //passes the user's input into deleteItem method's parameter
     }
 
