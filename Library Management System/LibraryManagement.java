@@ -67,18 +67,23 @@ public class LibraryManagement {
             switch (choice) {
                 case 1:
                     addBook();
+                    pause();
                     break;
                 case 2:
                     removeBook();
+                    pause();
                     break;
                 case 3:
                     displayAvailableBooks();
+                    pause();
                     break;
                 case 4:
                     borrowBook();
+                    pause();
                     break;
                 case 5:
                     returnBook();
+                    pause();
                     break;
                 case 6:
                     System.out.println("You have chosen to exit this program.");

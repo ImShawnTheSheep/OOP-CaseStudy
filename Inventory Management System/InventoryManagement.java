@@ -85,7 +85,7 @@ public class InventoryManagement {
         } while (!exit);
     }
 
-    /* prototype method calling from InventoryManagement Class */
+    /* static method to call object from Inventory--calls checking method */
     private static void checkItemQuantity() {
         clearScreen();
         System.out.print("Enter the name of the item you would like to check: ");
