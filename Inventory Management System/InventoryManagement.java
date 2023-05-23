@@ -11,7 +11,7 @@ class Inventory {
     }
 
     // removing item
-    public void deleteItem(String item, int quantity) {
+    public void removeItem(String item, int quantity) {
         items.remove(item, quantity);
         System.out.println(item + " with a quantity of " + quantity + " has been removed.");
     }
@@ -23,60 +23,60 @@ class Inventory {
 }
 
 public class InventoryManagement {
-
     private static Scanner input = new Scanner(System.in);
     private static Inventory myObj = new Inventory();
 
     /* pause method for better console readability */
     private static void pause() {
-        System.out.print("Press the enter key to continue...");
+        System.out.println("Press the enter key to continue...");
         input.nextLine();
         input.nextLine();
     }
 
-    /* static method to call object from Inventory--calls add method */
-    private static void insertItemQuantity(){
+    /* clears the console */
+    private static void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        // clear screen
-
+    }
+    
+    /* static method to call object from Inventory--calls add method */
+    private static void insertItemQuantity(){
+        clearScreen();
+        System.out.println("Option 1: Add Item");
         System.out.print("Enter an item you would like to save into the database: ");
         String insertItem = input.nextLine();
         System.out.print("Enter the quantity of the item you would like to add: ");
         int insertQuantity = input.nextInt();
 
-        myObj.addItem(insertItem, insertQuantity);
+        myObj.addItem(insertItem, insertQuantity); 
+        //passes the user's input into addItem method's parameter
     }
 
     /* static method to call object from Inventory--calls delete method */
-    private static void deleteItemQuantity(){
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-        // clear screen
-
+    private static void removeItemQuantity(){
+        clearScreen();
+        System.out.println("Option 2: Remove Item");
         System.out.print("Enter the name of the item you would like to delete: ");
         String removeItem = input.nextLine();
         System.out.print("Enter the quantity of the item you would like to delete: ");
         int removeQuantity = input.nextInt();
 
         myObj.deleteItem(removeItem, removeQuantity);
+        //passes the user's input into deleteItem method's parameter
     }
 
     /* prototype method calling from InventoryManagement Class */
     private static void checkItemQuantity() {
         // prototyping
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-        // clear screen
+        clearScreen();
+        System.out.println("Option 3: Check Item");
     }
 
-/* main method containing the menu console UI, and switch case operations */
+    /* main method containing the menu console UI, and switch case operations */
     public static void main(String[] args) {
         boolean exit = false;
         while (exit == false) {
-            System.out.print("\033[H\033[2J");
-            System.out.flush();
-
+            clearScreen();
             System.out.println("Inventory Management System");
             System.out.println("1. Add item");
             System.out.println("2. Remove item");
@@ -90,11 +90,11 @@ public class InventoryManagement {
             switch(choice) {
                 case 1:
                     insertItemQuantity(); 
-                    // calls insertItemQuantity method
+                    // calls insertItemQuantity
                     pause();
                     break;
                 case 2:
-                    deleteItemQuantity(); 
+                    removeItemQuantity(); 
                     // calls deleteItemQuantity
                     pause();
                     break;
@@ -104,16 +104,25 @@ public class InventoryManagement {
                     pause();
                     break;
                 case 4:
-                    System.out.print("You have chosen to exit this program.");
+                    /* terminates loop from while loop in main */
+                    System.out.println("Option 4: You have chosen to exit this program.");
                     exit = true;
                     break;
-                    /* terminates loop from while loop in main */
                 default:
-                    System.out.println("The choice you have chosen is either not available from the list \n or is not valid. ");
+                    /* prompt for invalid output */
+                    clearScreen();
+                    System.out.println("Invalid Input.");
+                    System.out.println("The choice you have chosen is either not available from the list\nor is not valid. ");
+                    System.out.println("Press the enter key to continue...");
+                    input.nextLine();
                     break;
             }
         }
+        /* closes the file, and prompts the user that the program has ended. */
         input.close();
-        System.out.println("\nThank you for using the Inventory Management System.");
+        clearScreen();
+        System.out.println("----------------------------------------------------");
+        System.out.println("Program Ended. ");
+        System.out.print("Thank you for using the Inventory Management System.");
     }
 }
