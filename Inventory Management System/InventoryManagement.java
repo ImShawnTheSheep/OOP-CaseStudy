@@ -18,11 +18,11 @@ class Inventory {
     }
 
     // removing item
-    public void deleteItem(String item, int quantity) {
+    public void removeItem(String item, int quantity) {
         items.remove(item, quantity);
         System.out.println(item + " with a quantity of " + quantity + " has been removed.");
     }
-
+    
     // check item
     public void checkItemQuantity(String item, int quantity) {
         // prototyping
@@ -38,7 +38,7 @@ public class InventoryManagement {
     private static void insertItemQuantity() {
         boolean exit = false;
         do {
-            cls();
+            clearScreen();
 
             System.out.print("Enter an item you would like to save into the database: ");
             String insertItem = input.nextLine();
@@ -58,17 +58,18 @@ public class InventoryManagement {
     }
 
     /* static method to call object from Inventory--calls delete method */
-    private static void deleteItemQuantity() {
+    private static void removeItemQuantity() {
         boolean exit = false;
         do {
-            cls();
-
+            clearScreen();
+            
             System.out.print("Enter the name of the item you would like to delete: ");
             String removeItem = input.nextLine();
             System.out.print("Enter the quantity of the item you would like to delete: ");
             int removeQuantity = input.nextInt();
 
-            inventory.deleteItem(removeItem, removeQuantity);
+            inventory.removeItem(removeItem, removeQuantity);
+            input.nextLine(); // clears buffer for next input
 
             System.out.print("Would you like to add another item? (Y/N): ");
             String choice = input.nextLine();
@@ -81,21 +82,23 @@ public class InventoryManagement {
 
     /* prototype method calling from InventoryManagement Class */
     private static void checkItemQuantity() {
-        cls();
+        clearScreen();
     }
 
     /* main method containing the menu console UI, and switch case operations */
     public static void main(String[] args) {
         boolean exit = false;
         while (!exit) {
-            cls();
+            clearScreen();
 
             // UI (console)
             System.out.println("Inventory Management System");
+            System.out.println("----------------------------------------------------");
             System.out.println("1. Add item");
             System.out.println("2. Remove item");
             System.out.println("3. Check item quantity");
             System.out.println("4. Exit");
+            System.out.println("----------------------------------------------------");
             System.out.print("Enter your choice: ");
             int choice = input.nextInt();
             input.nextLine(); // clears buffer for next input
@@ -107,7 +110,7 @@ public class InventoryManagement {
                     pause();
                     break;
                 case 2:
-                    deleteItemQuantity();
+                    removeItemQuantity();
                     pause();
                     break;
                 case 3:
@@ -120,17 +123,19 @@ public class InventoryManagement {
                     break;
                 /* terminates loop from while loop in main */
                 default:
-                    System.out.println(
-                            "The choice you have chosen is either not available from the list \n or is not valid. ");
+                    System.out.println("The choice you have chosen is either not available from the list \n or is not valid. ");
                     break;
             }
         }
         input.close();
-        System.out.println("\nThank you for using the Inventory Management System.");
+        clearScreen();
+        System.out.println("----------------------------------------------------");
+        System.out.println("Program Ended. ");
+        System.out.print("Thank you for using the Inventory Management System.");
     }
 
     /* clear screen method */
-    private static void cls() {
+    private static void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
