@@ -1,4 +1,4 @@
-# Group 1 - OOP Case Study
+# Group 4 - OOP Case Study
 
 This repository contains the case study files for our Object-Oriented Programming (OOP) subject. The case study focuses on applying OOP principles and concepts to solve real-world problems.
 
@@ -11,7 +11,7 @@ This repository contains the case study files for our Object-Oriented Programmin
 
 ## Introduction
 
-Welcome to **Group 1 - OOP Case Study** repository! This repository serves as a central location for our group's case study files, allowing us to collaborate, track changes, and maintain version control effectively.
+Welcome to **Group 4 - OOP Case Study** repository! This repository serves as a central location for our group's case study files, allowing us to collaborate, track changes, and maintain version control effectively.
 
 In this case study, we explore implementation of two real-world systems using object-oriented programming principles using Java. These case studies provide an opportunity to understand and practice OOP concepts such as encapsulation, inheritance, polymorphism, and abstraction.
 
@@ -55,7 +55,53 @@ The details inputted by the user after the program execution is **not required**
 
 ## Our Team
 
-- **Jumawan, Shawn Michael** (_Lead Developer/Project Manager_)
-- **Domingo, Kirsten Charles** (_Senior Developer/UI Lead_)
-- **Lopez, Maui Mark Daniel** (_Junior Developer/UX Lead_)
-- **Baledoya, Kyla Keith** (_Junior Developer/Documentation Lead_)
+<div align="center">
+  <div>
+    <img
+    src="https://github.com/ImShawnTheSheep/OOP-CaseStudy/blob/assets/shawn.jpg"
+    alt="Jumawan, Shawn Michael"
+    width="250"
+    height="250"
+    />
+    <p>
+      <b>Jumawan, Shawn Michael </b>
+      <i>(Lead Developer, Project Manager)</i>
+    </p>
+  </div>
+  <div>
+    <img
+    src="https://github.com/ImShawnTheSheep/OOP-CaseStudy/blob/assets/kc.jpg"
+    alt="Domingo, Kirsten Charles"
+    width="250"
+    height="250"
+    />
+    <p>
+      <b>Domingo, Kirsten Charles</b>
+      <i>(Senior Developer, UI Design Lead)</i>
+    </p>
+  </div>
+  <div>
+    <img
+        src="https://github.com/ImShawnTheSheep/OOP-CaseStudy/blob/assets/mao.jpg"
+        alt="Lopez, Maui Mark Daniel"
+        width="250"
+        height="250"
+      />
+    <p>
+      <b>Lopez, Maui Mark Daniel </b>
+      <i>(Senior Developer, Backend Lead)</i>
+    </p>
+  </div>
+  <div>
+    <img
+    src="https://github.com/ImShawnTheSheep/OOP-CaseStudy/blob/assets/kyla.jpg"
+    alt="Baledoya, Kyla Keith"
+    width="250"
+    height="250"
+    />
+    <p>
+      <b>Baledoya, Kyla Keith </b>
+      <i>(Junior Developer, Documentation Lead)</i>
+    </p>
+  </div>
+</div>

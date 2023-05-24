@@ -31,3 +31,6 @@ replay_pid*
 
 # User based
 .obsidian/
+
+# Ignore IML
+*iml/
