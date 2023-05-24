@@ -36,7 +36,7 @@ class Inventory {
 
    // get quantity
    public int getQuantity(String item) {
-      return item.getOrDefault(item, 0);
+      return items.getOrDefault(item, 0);
    }
 }
 
