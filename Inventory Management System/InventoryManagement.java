@@ -46,7 +46,7 @@ public class InventoryManagement {
    private static Inventory inventory = new Inventory();
 
    /* static method to call object from Inventory--calls add method */
-   private static void insertItemQuantity() {
+   private static void insertItem() {
       clearScreen();
 
       System.out.print("Enter an item you would like to save into the database: ");
@@ -75,11 +75,11 @@ public class InventoryManagement {
       String choice = input.nextLine().trim();
 
       if (choice.equalsIgnoreCase("Y") || choice.isEmpty())
-         insertItemQuantity();
+         insertItem();
    }
 
    /* static method to call object from Inventory--calls delete method */
-   private static void removeItemQuantity() {
+   private static void deleteItem() {
       clearScreen();
       boolean callMethod = false;
 
@@ -101,13 +101,13 @@ public class InventoryManagement {
       }
 
       if (callMethod) {
-         insertItemQuantity();
+         insertItem();
       } else {
          System.out.print("\nWould you like to remove another item? (Y/N): ");
          String choice = input.nextLine().trim();
 
          if (choice.equalsIgnoreCase("Y") || choice.isEmpty())
-            removeItemQuantity();
+            deleteItem();
       }
    }
 
@@ -129,7 +129,7 @@ public class InventoryManagement {
          System.out.print("\nWould you like to add instead? (Y/N):");
          String choice = input.nextLine().trim();
          if (choice.equalsIgnoreCase("Y"))
-            insertItemQuantity();
+            insertItem();
       }
    }
 
@@ -165,10 +165,10 @@ public class InventoryManagement {
          /* switch case choices, from 1 - 4, and default when user inputs invalid data */
          switch (choice) {
             case 1:
-               insertItemQuantity();
+               insertItem();
                break;
             case 2:
-               removeItemQuantity();
+               deleteItem();
                break;
             case 3:
                checkItemQuantity();
