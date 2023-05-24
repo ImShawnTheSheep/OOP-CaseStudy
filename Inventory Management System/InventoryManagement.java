@@ -135,12 +135,12 @@ public class InventoryManagement {
 
    /* static method to fetch all items in Inventory */
    private static void fetchInventory() {
-      System.out.println("+------------------------+");
-      System.out.println("| Item           | Qty.  |");
-      System.out.println("+------------------------+");
+      System.out.println("+-------------------------+");
+      System.out.println("| Item           | Qty.   |");
+      System.out.println("+-------------------------+");
       for (Map.Entry<String, Integer> entry : inventory.getItems().entrySet())
-         System.out.printf("| %-14s | %-5d |\n", entry.getKey(), entry.getValue());
-      System.out.println("+------------------------+");
+         System.out.printf("| %-14s | %-6d |\n", entry.getKey(), entry.getValue());
+      System.out.println("+-------------------------+");
    }
 
    /* main method containing the menu console UI, and switch case operations */
