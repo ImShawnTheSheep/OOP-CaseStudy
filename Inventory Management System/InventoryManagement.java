@@ -36,7 +36,7 @@ class Inventory {
 
    // get quantity
    public int getQuantity(String item) {
-      return items.getOrDefault(item, 0);
+      return item.getOrDefault(item, 0);
    }
 }
 
@@ -83,8 +83,6 @@ public class InventoryManagement {
       clearScreen();
       boolean callMethod = false;
 
-      fetchInventory();
-
       System.out.print("Enter an item you would like to remove from the database: ");
       String item = input.nextLine().trim();
 
@@ -92,6 +90,7 @@ public class InventoryManagement {
          inventory.removeItem(item);
          System.out.println(
                !inventory.containsItem(item) ? "\nThe item \"" + item + "\"" + " has been removed!" : "");
+         fetchInventory();
       } else {
          System.out.println("The item \"" + item + "\" doesn't exist!");
          System.out.print("\nWould you like to add instead? (Y/N):");
