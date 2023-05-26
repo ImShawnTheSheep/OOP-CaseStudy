@@ -94,10 +94,11 @@ public class LibraryManagement {
         clearScreen();
 
         System.out.print("Enter the title of the book: ");
-        String title = input.nextLine();
-
+        String title = input.nextLine().trim();
+        System.out.println("+---------------------------+");
+        System.out.println("+----------------------------+");
         System.out.print("Enter the author of the book: ");
-        String author = input.nextLine();
+        String author = input.nextLine().trim();
 
         Book book = new Book(title, author);
         library.addBook(book);
@@ -105,14 +106,16 @@ public class LibraryManagement {
 
     private static void removeBook() {
         clearScreen();
-        System.out.print("Enter the ID of the book you want to remove: ");
+        System.out.println("Enter the ID of the book you want to remove: ");
         int id = input.nextInt();
+        System.out.println("+---------------------------+");
         library.removeBook(id);
     }
 
     private static void displayAvailableBooks() {
         clearScreen();
         List<Book> availableBooks = library.getAvailableBooks();
+        System.out.println("+---------------------------+");
 
         if (availableBooks.isEmpty()) System.out.println("No books available in the library.");
         
@@ -132,6 +135,9 @@ public class LibraryManagement {
         System.out.print("Enter the ID of the book to borrow: ");
         int id = input.nextInt();
         input.nextLine();
+
+        System.out.println("+---------------------------+");
+
         Book book = library.findBook(id);
 
         /* checks if book is available */
@@ -154,6 +160,8 @@ public class LibraryManagement {
         System.out.print("Enter the ID of the book to return: ");
         int id = input.nextInt();
         input.nextLine();
+        System.out.println("+---------------------------+");
+
         Book book = library.findBook(id);
 
         /* checks if book is available */
