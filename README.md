@@ -60,8 +60,8 @@ The details inputted by the user after the program execution is **not required**
     <img
     src="https://github.com/ImShawnTheSheep/OOP-CaseStudy/blob/assets/shawn.jpg"
     alt="Jumawan, Shawn Michael"
-    width="250"
-    height="250"
+    width="240"
+    height="240"
     />
     <p>
       <b>Jumawan, Shawn Michael </b>
@@ -72,8 +72,8 @@ The details inputted by the user after the program execution is **not required**
     <img
     src="https://github.com/ImShawnTheSheep/OOP-CaseStudy/blob/assets/kc.jpg"
     alt="Domingo, Kirsten Charles"
-    width="250"
-    height="250"
+    width="240"
+    height="240"
     />
     <p>
       <b>Domingo, Kirsten Charles</b>
@@ -85,7 +85,7 @@ The details inputted by the user after the program execution is **not required**
         src="https://github.com/ImShawnTheSheep/OOP-CaseStudy/blob/assets/mao.jpg"
         alt="Lopez, Maui Mark Daniel"
         width="250"
-        height="250"
+        height="240"
       />
     <p>
       <b>Lopez, Maui Mark Daniel </b>
@@ -96,8 +96,8 @@ The details inputted by the user after the program execution is **not required**
     <img
     src="https://github.com/ImShawnTheSheep/OOP-CaseStudy/blob/assets/kyla.jpg"
     alt="Baledoya, Kyla Keith"
-    width="250"
-    height="250"
+    width="240"
+    height="240"
     />
     <p>
       <b>Baledoya, Kyla Keith </b>
