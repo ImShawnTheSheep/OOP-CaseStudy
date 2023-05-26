@@ -123,8 +123,9 @@ public class LibraryManagement {
 
     private static void borrowBook() {
         clearScreen();
-
+        //Get book to be borrowed
         System.out.println("Enter the ID of the book to borrow: ");
+        int id = input.nextInt();
         Book book = findBook(id);
         // Checks if there is a book
         if (book != null) {
@@ -144,8 +145,9 @@ public class LibraryManagement {
 
     private static void returnBook() {
         clearScreen();
-
+        //Get book to be returned
         System.out.println("Enter the ID of the book to return: ");
+        int id =input.nextInt();
         Book book = findBook(id);
         //Check  if there is a book
         if (book != null){
