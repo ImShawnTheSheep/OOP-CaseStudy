@@ -65,7 +65,7 @@ The details inputted by the user after the program execution is **not required**
     />
     <p>
       <b>Jumawan, Shawn Michael </b>
-      <i>(Lead Developer, Project Manager)</i>
+      <i>(Technical Project Manager)</i>
     </p>
   </div>
   <div>
@@ -77,7 +77,7 @@ The details inputted by the user after the program execution is **not required**
     />
     <p>
       <b>Domingo, Kirsten Charles</b>
-      <i>(Senior Developer, UI Design Lead)</i>
+      <i>(Senior Developer, UI/UX Specialist)</i>
     </p>
   </div>
   <div>
@@ -89,7 +89,7 @@ The details inputted by the user after the program execution is **not required**
       />
     <p>
       <b>Lopez, Maui Mark Daniel </b>
-      <i>(Senior Developer, Backend Lead)</i>
+      <i>(Senior Developer, Backend Architect)</i>
     </p>
   </div>
   <div>
@@ -101,7 +101,7 @@ The details inputted by the user after the program execution is **not required**
     />
     <p>
       <b>Baledoya, Kyla Keith </b>
-      <i>(Junior Developer, Documentation Lead)</i>
+      <i>(Junior Developer, UI Design Assistant)</i>
     </p>
   </div>
 </div>
