@@ -146,7 +146,7 @@ public class LibraryManagement {
         clearScreen();
 
         System.out.println("Enter the ID of the book to return: ");
-        Book book = findBook(id)
+        Book book = findBook(id);
         //Check  if there is a book
         if (book != null){
             //If book is available
