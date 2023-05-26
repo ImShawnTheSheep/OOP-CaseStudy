@@ -3,13 +3,14 @@ import java.util.Map;
 
 /* class for Inventory */
 class Inventory {
+    // Initializations
     private Map<String, Integer> items;
 
     public Inventory() {
         items = new HashMap<>();
     }
 
-    // adding item
+    // adding item, also check if item exists or not
     public void addItem(String item, int quantity) {
         if (items.containsKey(item)) {
             int current_quantity = items.get(item);
