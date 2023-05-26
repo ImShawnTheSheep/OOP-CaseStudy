@@ -33,9 +33,14 @@ class Book {
         return author;
     }
 
-    // sets the book availability
+    // gets the book availability
     public boolean isAvailable() {
         return available;
+    }
+
+    // sets the book availability
+    public void setAvailable(boolean available) {
+        this.available = available;
     }
 }
 
@@ -75,6 +80,7 @@ class Library {
     /* method to get all available books in the library */
     public List<Book> getAvailableBooks() {
         List<Book> availableBooks = new ArrayList<>();
+
         for (Book book : books) {
             if (book.isAvailable()) {
                 availableBooks.add(book);
@@ -114,54 +120,56 @@ public class LibraryManagement {
         clearScreen();
         List<Book> availableBooks = library.getAvailableBooks();
 
-        for (Book book : availableBooks) {
-            System.out.println("ID: " + book.getID());
-            System.out.println("Title: " + book.getTitle());
-            System.out.println("Author: " + book.getAuthor());
+        if (availableBooks.isEmpty()) {
+            System.out.println("No books available in the library.");
+        } else {
+            System.out.println("Available books in the library: ");
+            for (Book book : availableBooks) {
+                System.out.println("ID: " + book.getID());
+                System.out.println("Title: " + book.getTitle());
+                System.out.println("Author: " + book.getAuthor() + "\n");
+            }
         }
     }
 
     private static void borrowBook() {
         clearScreen();
-        //Get book to be borrowed
+        // Get book to be borrowed
         System.out.println("Enter the ID of the book to borrow: ");
         int id = input.nextInt();
-        Book book = findBook(id);
-        // Checks if there is a book
-        if (book != null) {
-            // If book is available
-            if (!book.isAvailable()) {
-                //Book is now out of the library
-                book.setAvailable(false);
-                System.out.println("The book " + book.getTitle() + " has been borrowed.");
-            } else {
-                System.out.print.ln("The book is unavailable at the moment.");
-            }
-        }
-        else{
-            System.out.print.ln("Error no such book found.");
+        input.nextLine();
+
+        Book book = library.findBook(id);
+
+        /* checks if book is available */
+        if (book == null) {
+            System.out.println("Book not found.");
+        } else if (!book.isAvailable()) {
+            // Book is now out of the library
+            System.out.println("The book " + book.getTitle() + " has been borrowed.");
+        } else {
+            book.setAvailable(false);
+            System.out.println("Book borrowed successfully.");
         }
     }
 
     private static void returnBook() {
         clearScreen();
-        //Get book to be returned
+        // Get book to be returned
         System.out.println("Enter the ID of the book to return: ");
-        int id =input.nextInt();
-        Book book = findBook(id);
-        //Check  if there is a book
-        if (book != null){
-            //If book is available
-            if(!book.isAvailable()){
-                //Book is now back at the library
-                book.setAvailable(true);
-                System.out.println("The book " + book.getTitle() + " has been returned.");
-            } else {
-                System.out.print.ln("The book have already been returned.");
-            }
-        }
-        else{
-            System.out.println("Error no such book found.");
+        int id = input.nextInt();
+        input.nextLine();
+
+        Book book = library.findBook(id);
+
+        /* checks if book is available */
+        if (book == null) {
+            System.out.println("Book not found.");
+        } else if (book.isAvailable()) {
+            System.out.println("The book " + book.getTitle() + " is already in the library.");
+        } else {
+            book.setAvailable(true);
+            System.out.println("Book returned successfully.");
         }
     }
 
