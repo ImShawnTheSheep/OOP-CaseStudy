@@ -12,6 +12,7 @@ public class InventoryManagement {
       Util.clearScreen(); // clears the console
       String choice = "";
 
+      // checks for exceptions
       System.out.print("Enter an item you would like to save into the inventory: ");
       String item = input.nextLine().trim();
       if (!inputCatch(item)) {
@@ -19,8 +20,7 @@ public class InventoryManagement {
          return;
       }
 
-      // checks if the item already is in the inventory and will ask the user if they
-      // want to the existing quantity
+      // checks if the item already is in the inventory and will ask the user if they want to the existing quantity
       if (inventory.containsItem(item)) {
          System.out.println("The item \"" + item + "\" already exists!");
          System.out.print("Would you like to add the item's quantity? (Y/N): ");
@@ -37,8 +37,7 @@ public class InventoryManagement {
       System.out.print("\nWould you like to add another item? (Y/N): ");
       choice = input.nextLine().trim();
 
-      // if the user wants to add another item (either chooses 'Y' or enters an empty
-      // input)
+      // if the user wants to add another item (either chooses 'Y' or enters an empty input)
       if (choice.equalsIgnoreCase("Y") || choice.isEmpty())
          insertItem(); // recursive call to the insertItem() method to continue adding items
    }
@@ -48,6 +47,7 @@ public class InventoryManagement {
       Util.clearScreen(); // clears the console
       boolean callMethod = false;
 
+      // checks for exceptions
       System.out.print("Enter an item you would like to remove from the inventory: ");
       String item = input.nextLine().trim();
       if (!inputCatch(item)) {
@@ -90,6 +90,7 @@ public class InventoryManagement {
 
       displayInventory(); // displays the table for inventory
 
+      // checks for exceptions
       System.out.print("Enter the item you want to check for its quantity: ");
       String choice = "";
       String item = input.nextLine().trim();
@@ -98,8 +99,7 @@ public class InventoryManagement {
          return;
       }
 
-      // checks if the inventory contains that item, and if not--ask if user wants to
-      // add an item
+      // checks if the inventory contains that item, and if not--ask if user wants to add an item
       if (!inventory.containsItem(item))
          System.out.println("The item \"" + item + "\" doesn't exist in this inventory.");
 
@@ -180,22 +180,23 @@ public class InventoryManagement {
          /* terminates loop from while loop in main */
          default:
             System.out
-                  .println(
-                        "The option you have chosen is either not available from the menu \n or is not valid. ");
+                  .println("The option you have chosen is either not available from the menu \n or is not valid. ");
             break;
       }
    }
 
+   /* Exception Handling method for integer values when called from other methods */
    private static int inputCatch() {
       boolean validInput = false;
       int quantity = 0;
       while (!validInput) {
+         // do normal input process
          try {
             System.out.print("Enter the quantity of the item you would like to add: ");
             quantity = input.nextInt();
             input.nextLine();
             validInput = true;
-         } catch (InputMismatchException e) {
+         } catch (InputMismatchException e) { // mismatch exception
             input.nextLine();
             System.out.println("Invalid input. Please enter a valid integer.");
             Util.pause();
@@ -205,19 +206,25 @@ public class InventoryManagement {
       return quantity;
    }
 
+   /* Exception Handling method for string values when called from other methods */
    private static boolean inputCatch(String item) {
       try {
+         // exception for null value
          if (item.isEmpty()) {
             System.out.println("Null input. Enter a valid string!");
             Util.pause();
             return false;
          }
+
+         // exception for alphanumeric value
          if (!item.matches("[a-zA-Z]+")) {
             System.out.println("Invalid input. Please enter a valid string!");
             Util.pause();
             return false;
          }
          return true;
+
+      // exception for special characters
       } catch (Exception e) {
          System.out.println("Invalid input. Please enter a valid string.");
          Util.pause();

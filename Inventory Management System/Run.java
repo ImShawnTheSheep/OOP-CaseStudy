@@ -2,7 +2,7 @@
 public class Run {
 
     public static void main(String[] args) {
-        InventoryManagement.run();
+        InventoryManagement.run(); // calls the Inventory Management class from main
 
         /* output prompt for exiting the program */
         Util.clearScreen(); // clears the console
