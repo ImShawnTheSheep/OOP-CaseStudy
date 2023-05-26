@@ -52,17 +52,22 @@ public class InventoryManagement {
       System.out.print("Enter an item you would like to save into the database: ");
       String item = input.nextLine().trim();
 
+      // if the item does not already exist in the inventory
       if (!inventory.containsItem(item)) {
          System.out.print("Enter the quantity of the item you would like to add: ");
          int quantity = input.nextInt();
          inventory.addItem(item, quantity);
 
+         // display the updated inventory
          fetchInventory();
+
+         // if the item already exists in the inventory
       } else {
          System.out.println("The item \"" + item + "\" already exists!");
          System.out.print("Would you like to add quantity? (Y/N): ");
          String choice = input.nextLine().trim();
 
+         // if the user wants to add quantity to the existing item
          if (choice.equalsIgnoreCase("Y")) {
             System.out.print("Enter the quantity of the item you would like to add: ");
             int quantity = input.nextInt();
@@ -74,8 +79,9 @@ public class InventoryManagement {
       System.out.print("\nWould you like to add another item? (Y/N): ");
       String choice = input.nextLine().trim();
 
+      // if the user wants to add another item (either chooses 'Y' or enters an empty input)
       if (choice.equalsIgnoreCase("Y") || choice.isEmpty())
-         insertItem();
+         insertItem(); // recursive call to the insertItem() method to continue adding items
    }
 
    /* static method to call object from Inventory--calls delete method */
@@ -86,27 +92,34 @@ public class InventoryManagement {
       System.out.print("Enter an item you would like to remove from the database: ");
       String item = input.nextLine().trim();
 
+      // if the item exists in the inventory
       if (inventory.containsItem(item)) {
-         inventory.removeItem(item);
+         inventory.removeItem(item); // remove the item from the inventory
+         // if the item is no longer present in the inventory, display a success message
          System.out.println(
                !inventory.containsItem(item) ? "\nThe item \"" + item + "\"" + " has been removed!" : "");
-         fetchInventory();
+         fetchInventory(); // fetch and display the updated inventory
+
+         // if the item doesn't exist in the inventory
       } else {
          System.out.println("The item \"" + item + "\" doesn't exist!");
          System.out.print("\nWould you like to add instead? (Y/N):");
          String choice = input.nextLine().trim();
          if (choice.equalsIgnoreCase("Y"))
-            callMethod = true;
+            callMethod = true; // set a flag to indicate that the insertItem() method should be called
       }
-
+      // if the flag is set, call the insertItem() method to allow the user to add a new item
       if (callMethod) {
          insertItem();
+
+         // if the flag is not set
       } else {
          System.out.print("\nWould you like to remove another item? (Y/N): ");
          String choice = input.nextLine().trim();
 
+         // if the user wants to remove another item (either chooses 'Y' or enters an empty input)
          if (choice.equalsIgnoreCase("Y") || choice.isEmpty())
-            deleteItem();
+            deleteItem(); // recursive call to the deleteItem() method to continue removing items
       }
    }
 
@@ -114,21 +127,28 @@ public class InventoryManagement {
    private static void checkItemQuantity() {
       clearScreen();
 
+      // fetches and displays the current inventory
       fetchInventory();
 
       System.out.print("Enter item you want to check the quantity: ");
-      String item = input.nextLine().trim();
+      String item = input.nextLine().trim(); // reads the item name from the user
 
+      // if the item exists in the inventory
       if (inventory.containsItem(item)) {
+         // display the quantity of the item in the inventory
          System.out.println(
                "The item \"" + item + "\" has a quantity of " + inventory.getQuantity(item));
-         pause();
+         pause(); // pause the program to allow the user to read the information
+
+         // if the item doesn't exist in the inventory
       } else {
          System.out.println("The item \"" + item + "\" doesn't exist");
          System.out.print("\nWould you like to add instead? (Y/N):");
          String choice = input.nextLine().trim();
+
+         // if the user wants to add the item instead (chooses 'Y')
          if (choice.equalsIgnoreCase("Y"))
-            insertItem();
+            insertItem(); // call the insertItem() method to add a new item
       }
    }
 
@@ -137,7 +157,9 @@ public class InventoryManagement {
       System.out.println("+-------------------------+");
       System.out.println("| Item           | Qty.   |");
       System.out.println("+-------------------------+");
+      // iterate over each entry in the inventory items map
       for (Map.Entry<String, Integer> entry : inventory.getItems().entrySet())
+         // print the item name and quantity in a formatted table row
          System.out.printf("| %-14s | %-6d |\n", entry.getKey(), entry.getValue());
       System.out.println("+-------------------------+");
    }
