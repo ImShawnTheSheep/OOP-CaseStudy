@@ -121,11 +121,11 @@ public class LibraryManagement {
         }
     }
 
-    private static void borrowBook(int ID) {
+    private static void borrowBook() {
         clearScreen();
 
         System.out.println("Enter the ID of the book to borrow: ");
-        Book book = findBook(ID);
+        Book book = findBook(id);
         // Checks if there is a book
         if (book != null) {
             // If book is available
@@ -142,11 +142,11 @@ public class LibraryManagement {
         }
     }
 
-    private static void returnBook(int ID) {
+    private static void returnBook() {
         clearScreen();
 
         System.out.println("Enter the ID of the book to return: ");
-        Book book = findBook()
+        Book book = findBook(id)
         //Check  if there is a book
         if (book != null){
             //If book is available
