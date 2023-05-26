@@ -101,7 +101,11 @@ public class LibraryManagement {
 
         System.out.print("Enter the title of the book: ");
         String title = input.nextLine().trim();
+<<<<<<< Updated upstream
         System.out.println("+---------------------------+");
+=======
+        System.out.println("+----------------------------+");
+>>>>>>> Stashed changes
         System.out.print("Enter the author of the book: ");
         String author = input.nextLine().trim();
 
@@ -113,7 +117,11 @@ public class LibraryManagement {
         clearScreen();
         System.out.println("Enter the ID of the book you want to remove: ");
         int id = input.nextInt();
+<<<<<<< Updated upstream
         System.out.println("+---------------------------+");
+=======
+        System.out.println("+---------------------------------------------+");
+>>>>>>> Stashed changes
         library.removeBook(id);
     }
 
@@ -129,7 +137,11 @@ public class LibraryManagement {
                 System.out.println("ID: " + book.getID());
                 System.out.println("Title: " + book.getTitle());
                 System.out.println("Author: " + book.getAuthor() + "\n");
+<<<<<<< Updated upstream
                 System.out.println("+---------------------------+");
+=======
+                System.out.println("+-------------------------+");
+>>>>>>> Stashed changes
             }
         }
     }
@@ -140,7 +152,11 @@ public class LibraryManagement {
         System.out.println("Enter the ID of the book to borrow: ");
         int id = input.nextInt();
         input.nextLine();
+<<<<<<< Updated upstream
         System.out.println("+---------------------------+");
+=======
+        System.out.println("+---------------------------------------------+");
+>>>>>>> Stashed changes
         Book book = library.findBook(id);
 
         /* checks if book is available */
@@ -194,7 +210,11 @@ public class LibraryManagement {
 
             //Exception handling for input choice of user
             try {
+<<<<<<< Updated upstream
                 choice = input.nextInt();
+=======
+                int choice = input.nextInt();
+>>>>>>> Stashed changes
                 input.nextLine();
             } catch (InputMismatchException e) {
                 System.out.println("Invalid Input");
