@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.InputMismatchException
+import java.util.InputMismatchException;
 
 class Book {
     private static int nextID = 001;
@@ -71,11 +71,8 @@ class Library {
     /* method to find books in the library */
     public Book findBook(int id) {
         for (Book book : books) {
-            if (book.getID() == id) {
-                return book;
-            }
-        }
-        return null;
+            if (book.getID() == id) return book;
+        } return null;
     }
 
     /* method to get all available books in the library */
@@ -83,11 +80,8 @@ class Library {
         List<Book> availableBooks = new ArrayList<>();
 
         for (Book book : books) {
-            if (book.isAvailable()) {
-                availableBooks.add(book);
-            }
-        }
-        return availableBooks;
+            if (book.isAvailable()) availableBooks.add(book);
+        } return availableBooks;
     }
 
 }
@@ -113,7 +107,6 @@ public class LibraryManagement {
         clearScreen();
         System.out.print("Enter the ID of the book you want to remove: ");
         int id = input.nextInt();
-
         library.removeBook(id);
     }
 
@@ -121,9 +114,9 @@ public class LibraryManagement {
         clearScreen();
         List<Book> availableBooks = library.getAvailableBooks();
 
-        if (availableBooks.isEmpty()) {
-            System.out.println("No books available in the library.");
-        } else {
+        if (availableBooks.isEmpty()) System.out.println("No books available in the library.");
+        
+        if (!availableBooks.isEmpty()){
             System.out.println("Available books in the library: ");
             for (Book book : availableBooks) {
                 System.out.println("ID: " + book.getID());
@@ -136,19 +129,20 @@ public class LibraryManagement {
     private static void borrowBook() {
         clearScreen();
         // Get book to be borrowed
-        System.out.println("Enter the ID of the book to borrow: ");
+        System.out.print("Enter the ID of the book to borrow: ");
         int id = input.nextInt();
         input.nextLine();
-
         Book book = library.findBook(id);
 
         /* checks if book is available */
-        if (book == null) {
+        if (book == null) 
             System.out.println("Book not found.");
-        } else if (!book.isAvailable()) {
+        
+        if (!book.isAvailable()) 
             // Book is now out of the library
-            System.out.println("The book " + book.getTitle() + " has been borrowed.");
-        } else {
+            System.out.println("The book " + book.getTitle() + " has been borrowed."); 
+
+        if (book.isAvailable()){
             book.setAvailable(false);
             System.out.println("Book borrowed successfully.");
         }
@@ -157,18 +151,19 @@ public class LibraryManagement {
     private static void returnBook() {
         clearScreen();
         // Get book to be returned
-        System.out.println("Enter the ID of the book to return: ");
+        System.out.print("Enter the ID of the book to return: ");
         int id = input.nextInt();
         input.nextLine();
-
         Book book = library.findBook(id);
 
         /* checks if book is available */
-        if (book == null) {
+        if (book == null) 
             System.out.println("Book not found.");
-        } else if (book.isAvailable()) {
+        
+        if (book.isAvailable()) 
             System.out.println("The book " + book.getTitle() + " is already in the library.");
-        } else {
+
+        if (!book.isAvailable()){
             book.setAvailable(true);
             System.out.println("Book returned successfully.");
         }
@@ -189,11 +184,11 @@ public class LibraryManagement {
             System.out.println("6. Exit");
             System.out.println("-----------------------------");
             System.out.print("Enter your choice: ");
-            int choice;
+            int choice = 0;
 
             //Exception handling for input choice of user
             try {
-                int choice = input.nextInt();
+                choice = input.nextInt();
                 input.nextLine();
             } catch (InputMismatchException e) {
                 System.out.println("Invalid Input");
