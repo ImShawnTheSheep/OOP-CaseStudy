@@ -47,7 +47,7 @@ public class InventoryManagement {
 
    /* static method to call object from Inventory--calls add method */
    private static void insertItem() {
-      clearScreen();
+      clearScreen(); // clears the console
 
       System.out.print("Enter an item you would like to save into the database: ");
       String item = input.nextLine().trim();
@@ -80,7 +80,7 @@ public class InventoryManagement {
 
    /* static method to call object from Inventory--calls delete method */
    private static void deleteItem() {
-      clearScreen();
+      clearScreen(); // clears the console
       boolean callMethod = false;
 
       System.out.print("Enter an item you would like to remove from the database: ");
@@ -112,9 +112,9 @@ public class InventoryManagement {
 
    /* static method to call object from Inventory--calls checking method */
    private static void checkItemQuantity() {
-      clearScreen();
+      clearScreen(); // clears the console
 
-      fetchInventory();
+      fetchInventory(); // fetches the table for inventory
 
       System.out.print("Enter item you want to check the quantity: ");
       String item = input.nextLine().trim();
@@ -137,6 +137,7 @@ public class InventoryManagement {
       System.out.println("+-------------------------+");
       System.out.println("| Item           | Qty.   |");
       System.out.println("+-------------------------+");
+      /* Output prompt or visualized items and quantity table  */
       for (Map.Entry<String, Integer> entry : inventory.getItems().entrySet())
          System.out.printf("| %-14s | %-6d |\n", entry.getKey(), entry.getValue());
       System.out.println("+-------------------------+");
@@ -146,7 +147,7 @@ public class InventoryManagement {
    public static void main(String[] args) {
       boolean exit = false;
       do {
-         clearScreen();
+         clearScreen(); // clears the console
 
          // UI (console)
          System.out.println("+-----------------------------+");
@@ -183,7 +184,8 @@ public class InventoryManagement {
                break;
          }
       } while (!exit);
-      clearScreen();
+      /* output prompt for exiting the program */
+      clearScreen(); // clears the console
       System.out.println("----------------------------------------------------");
       System.out.println("Program Ended. ");
       System.out.print("Thank you for using the Inventory Management System.");
