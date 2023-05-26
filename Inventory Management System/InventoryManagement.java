@@ -7,17 +7,17 @@ public class InventoryManagement {
    private static Scanner input = new Scanner(System.in);
    private static Inventory inventory = new Inventory();
 
-   /* static method to call object from Inventory--calls add method */
+   // static method to call object from Inventory--calls add method
    private static void insertItem() {
       Util.clearScreen(); // clears the console
 
-      System.out.print("Enter an item you would like to save into the inventory: ");
-      String choice = "";
+      System.out.print("Enter an item you would like to save into the inventory: ";
       String item = input.nextLine().trim();
       if (!inputCatch(item)) {
          insertItem();
          return;
       }
+
 
       // checks if the item already is in the inventory and will ask the user if they
       // want to the existing quantity
@@ -31,15 +31,18 @@ public class InventoryManagement {
       if (choice.equalsIgnoreCase("Y") || choice.isEmpty() || !inventory.containsItem(item)) {
          inventory.addItem(item, inputCatch());
          displayInventory();
+
       }
 
       System.out.print("\nWould you like to add another item? (Y/N): ");
-      choice = input.nextLine().trim();
+      String choice = input.nextLine().trim();
+
+      // if the user wants to add another item (either chooses 'Y' or enters an empty input)
       if (choice.equalsIgnoreCase("Y") || choice.isEmpty())
-         insertItem(); // calls insertItem()
+         insertItem(); // recursive call to the insertItem() method to continue adding items
    }
 
-   /* static method to call object from Inventory--calls delete method */
+   // static method to call object from Inventory--calls delete method
    private static void deleteItem() {
       Util.clearScreen(); // clears the console
       boolean callMethod = false;
@@ -50,6 +53,7 @@ public class InventoryManagement {
          deleteItem();
          return;
       }
+
 
       // Checks if the inventory does not have the item
       if (!inventory.containsItem(item)) {
@@ -80,7 +84,7 @@ public class InventoryManagement {
          insertItem();
    }
 
-   /* static method to call object from Inventory--calls checking method */
+   // static method to call object from Inventory--calls checking method
    private static void checkItemQuantity() {
       Util.clearScreen(); // clears the console
 
@@ -121,10 +125,13 @@ public class InventoryManagement {
       System.out.println("| Item           | Qty.   |");
       System.out.println("+-------------------------+");
       /* Output prompt or visualized items and quantity table */
+
       for (Map.Entry<String, Integer> entry : inventory.getItems().entrySet())
+         // print the item name and quantity in a formatted table row
          System.out.printf("| %-14s | %-6d |\n", entry.getKey(), entry.getValue());
       System.out.println("+-------------------------+");
    }
+
 
    /* main method containing the menu console UI, and switch case operations */
 
@@ -217,5 +224,6 @@ public class InventoryManagement {
          Util.pause();
          return false;
       }
+
    }
 }
