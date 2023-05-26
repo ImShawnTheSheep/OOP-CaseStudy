@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.InputMismatchException
 
 class Book {
     private static int nextID = 001;
@@ -188,8 +189,16 @@ public class LibraryManagement {
             System.out.println("6. Exit");
             System.out.println("-----------------------------");
             System.out.print("Enter your choice: ");
-            int choice = input.nextInt();
-            input.nextLine();
+            int choice;
+
+            //Exception handling for input choice of user
+            try {
+                int choice = input.nextInt();
+                input.nextLine();
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid Input");
+                pause();
+            }
 
             switch (choice) {
                 case 1:
