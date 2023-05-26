@@ -121,15 +121,46 @@ public class LibraryManagement {
         }
     }
 
-    private static void borrowBook() {
+    private static void borrowBook(int ID) {
         clearScreen();
 
+        System.out.println("Enter the ID of the book to borrow: ");
+        Book book = findBook(ID);
+        // Checks if there is a book
+        if (book != null) {
+            // If book is available
+            if (!book.isAvailable()) {
+                //Book is now out of the library
+                book.setAvailable(false);
+                System.out.println("The book " + book.getTitle() + " has been borrowed.");
+            } else {
+                System.out.print.ln("The book is unavailable at the moment.");
+            }
+        }
+        else{
+            System.out.print.ln("Error no such book found.");
+        }
     }
 
-    private static void returnBook() {
+    private static void returnBook(int ID) {
         clearScreen();
-        System.out.println("Enter the ID of the book to return: ");
 
+        System.out.println("Enter the ID of the book to return: ");
+        Book book = findBook()
+        //Check  if there is a book
+        if (book != null){
+            //If book is available
+            if(!book.isAvailable()){
+                //Book is now back at the library
+                book.setAvailable(true);
+                System.out.println("The book " + book.getTitle() + " has been returned.");
+            } else {
+                System.out.print.ln("The book have already been returned.");
+            }
+        }
+        else{
+            System.out.println("Error no such book found.");
+        }
     }
 
     public static void main(String[] args) {
