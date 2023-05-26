@@ -45,7 +45,7 @@ public class InventoryManagement {
    private static Scanner input = new Scanner(System.in);
    private static Inventory inventory = new Inventory();
 
-   /* static method to call object from Inventory--calls add method */
+   // static method to call object from Inventory--calls add method
    private static void insertItem() {
       clearScreen();
 
@@ -84,7 +84,7 @@ public class InventoryManagement {
          insertItem(); // recursive call to the insertItem() method to continue adding items
    }
 
-   /* static method to call object from Inventory--calls delete method */
+   // static method to call object from Inventory--calls delete method
    private static void deleteItem() {
       clearScreen();
       boolean callMethod = false;
@@ -123,7 +123,7 @@ public class InventoryManagement {
       }
    }
 
-   /* static method to call object from Inventory--calls checking method */
+   // static method to call object from Inventory--calls checking method
    private static void checkItemQuantity() {
       clearScreen();
 
@@ -152,7 +152,7 @@ public class InventoryManagement {
       }
    }
 
-   /* static method to fetch all items in Inventory */
+   // static method to fetch all items in Inventory
    private static void fetchInventory() {
       System.out.println("+-------------------------+");
       System.out.println("| Item           | Qty.   |");
@@ -164,7 +164,7 @@ public class InventoryManagement {
       System.out.println("+-------------------------+");
    }
 
-   /* main method containing the menu console UI, and switch case operations */
+   // main method containing the menu console UI, and switch case operations
    public static void main(String[] args) {
       boolean exit = false;
       do {
@@ -183,7 +183,7 @@ public class InventoryManagement {
          int choice = input.nextInt();
          input.nextLine(); // clears buffer for next input
 
-         /* switch case choices, from 1 - 4, and default when user inputs invalid data */
+         // switch case choices, from 1 - 4, and default when user inputs invalid data
          switch (choice) {
             case 1:
                insertItem();
@@ -198,7 +198,7 @@ public class InventoryManagement {
                System.out.println("You have chosen to exit this program.");
                exit = true;
                break;
-            /* terminates loop from while loop in main */
+            // terminates loop from while loop in main
             default:
                System.out.println(
                      "The choice you have chosen is either not available from the list \n or is not valid. ");
@@ -211,13 +211,13 @@ public class InventoryManagement {
       System.out.print("Thank you for using the Inventory Management System.");
    }
 
-   /* clear screen method */
+   // clear screen method
    private static void clearScreen() {
       System.out.print("\033[H\033[2J");
       System.out.flush();
    }
 
-   /* pause method */
+   // pause method
    private static void pause() {
       System.out.print("\nPress the enter key to continue...");
       input.nextLine();
