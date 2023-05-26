@@ -3,12 +3,12 @@ import java.util.List;
 import java.util.Scanner;
 
 class Book {
-    private static int nextID = 001;
+    private static int nextID = 001; // keeps track of the next available book ID
 
-    private int id;
-    private String title;
-    private String author;
-    private boolean available;
+    private int id; // unique ID of the book
+    private String title; // title of the book
+    private String author; // author of the book
+    private boolean available; // indicates if the book is available for borrowing or not
 
     // creates a book object
     public Book(String title, String author) {
@@ -52,12 +52,12 @@ class Library {
         this.books = new ArrayList<>();
     }
 
-    /* method to add books in library */
+    // method to add books in library
     public void addBook(Book book) {
         books.add(book);
     }
 
-    /* method to remove books in library */
+    // method to remove books in library
     public void removeBook(int id) {
         for (Book book : books) {
             if (book.getID() == id) {
@@ -67,7 +67,7 @@ class Library {
         }
     }
 
-    /* method to find books in the library */
+    // method to find books in the library
     public Book findBook(int id) {
         for (Book book : books) {
             if (book.getID() == id) {
@@ -77,7 +77,7 @@ class Library {
         return null;
     }
 
-    /* method to get all available books in the library */
+    // method to get all available books in the library
     public List<Book> getAvailableBooks() {
         List<Book> availableBooks = new ArrayList<>();
 
@@ -95,6 +95,7 @@ public class LibraryManagement {
     private static Scanner input = new Scanner(System.in);
     private static Library library = new Library();
 
+    // method to add a book to the library
     private static void addBook() {
         clearScreen();
 
@@ -108,6 +109,7 @@ public class LibraryManagement {
         library.addBook(book);
     }
 
+    // method to remove a book from the library
     private static void removeBook() {
         clearScreen();
         System.out.print("Enter the ID of the book you want to remove: ");
@@ -116,6 +118,7 @@ public class LibraryManagement {
         library.removeBook(id);
     }
 
+    // method to display all available books in the library
     private static void displayAvailableBooks() {
         clearScreen();
         List<Book> availableBooks = library.getAvailableBooks();
@@ -132,20 +135,21 @@ public class LibraryManagement {
         }
     }
 
+    // method to borrow a book from the library
     private static void borrowBook() {
         clearScreen();
-        // Get book to be borrowed
+        // get book to be borrowed
         System.out.println("Enter the ID of the book to borrow: ");
         int id = input.nextInt();
         input.nextLine();
 
         Book book = library.findBook(id);
 
-        /* checks if book is available */
+        // checks if book is available
         if (book == null) {
             System.out.println("Book not found.");
         } else if (!book.isAvailable()) {
-            // Book is now out of the library
+            // book is now out of the library
             System.out.println("The book " + book.getTitle() + " has been borrowed.");
         } else {
             book.setAvailable(false);
@@ -153,16 +157,17 @@ public class LibraryManagement {
         }
     }
 
+    // method to return a book to the library
     private static void returnBook() {
         clearScreen();
-        // Get book to be returned
+        // get book to be returned
         System.out.println("Enter the ID of the book to return: ");
         int id = input.nextInt();
         input.nextLine();
 
         Book book = library.findBook(id);
 
-        /* checks if book is available */
+        // checks if book is available
         if (book == null) {
             System.out.println("Book not found.");
         } else if (book.isAvailable()) {
@@ -228,11 +233,13 @@ public class LibraryManagement {
         System.out.print("Thank you for using the Library Management System.");
     }
 
+    // utility method to clear the console screen
     private static void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
 
+    // utility method to pause and wait for user input
     private static void pause() {
         System.out.print("Press the enter key to continue...");
         input.nextLine();
