@@ -100,10 +100,10 @@ public class LibraryManagement {
         clearScreen();
 
         System.out.print("Enter the title of the book: ");
-        String title = input.nextLine();
+        String title = input.nextLine().trim();
 
         System.out.print("Enter the author of the book: ");
-        String author = input.nextLine();
+        String author = input.nextLine().trim();
 
         Book book = new Book(title, author);
         library.addBook(book);
@@ -111,8 +111,8 @@ public class LibraryManagement {
 
     private static void removeBook() {
         clearScreen();
-        System.out.print("Enter the ID of the book you want to remove: ");
-        int id = input.nextInt();
+        System.out.println("Enter the ID of the book you want to remove: ");
+        int id = input.nextInt().trim;
 
         library.removeBook(id);
     }
@@ -137,7 +137,7 @@ public class LibraryManagement {
         clearScreen();
         // Get book to be borrowed
         System.out.println("Enter the ID of the book to borrow: ");
-        int id = input.nextInt();
+        int id = input.nextInt().trim();
         input.nextLine();
 
         Book book = library.findBook(id);
@@ -158,7 +158,7 @@ public class LibraryManagement {
         clearScreen();
         // Get book to be returned
         System.out.println("Enter the ID of the book to return: ");
-        int id = input.nextInt();
+        int id = input.nextInt().trim();
         input.nextLine();
 
         Book book = library.findBook(id);
@@ -193,7 +193,7 @@ public class LibraryManagement {
 
             //Exception handling for input choice of user
             try {
-                int choice = input.nextInt();
+                int choice = input.nextInt().trim();
                 input.nextLine();
             } catch (InputMismatchException e) {
                 System.out.println("Invalid Input");
