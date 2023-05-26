@@ -11,12 +11,11 @@ class Inventory {
 
    // adding item
    public void addItem(String item, int quantity) {
-      if (!items.containsKey(item)) {
-         items.put(item, quantity);
-      } else {
+      if (items.containsKey(item)) {
          int current_quantity = items.get(item);
          items.put(item, current_quantity + quantity);
       }
+      if (!items.containsKey(item)) items.put(item, quantity);
    }
 
    // removing item
@@ -47,10 +46,12 @@ public class InventoryManagement {
 
    // static method to call object from Inventory--calls add method
    private static void insertItem() {
-      clearScreen();
+      clearScreen(); // clears the console
 
-      System.out.print("Enter an item you would like to save into the database: ");
+      System.out.print("Enter an item you would like to save into the inventory: ");
+      String choice = "";
       String item = input.nextLine().trim();
+
 
       // if the item does not already exist in the inventory
       if (!inventory.containsItem(item)) {
@@ -73,23 +74,35 @@ public class InventoryManagement {
             int quantity = input.nextInt();
             inventory.addItem(item, quantity);
          }
+
       }
+
+      // checks if the item is not in the inventory
+      if (!inventory.containsItem(item)) {
+         System.out.print("Enter the quantity of the item you would like to add: ");
+         int quantity = input.nextInt();
+         inventory.addItem(item, quantity);
+         fetchInventory(); // shows the inventory table
+      } 
 
       input.nextLine();
       System.out.print("\nWould you like to add another item? (Y/N): ");
+
       String choice = input.nextLine().trim();
 
       // if the user wants to add another item (either chooses 'Y' or enters an empty input)
       if (choice.equalsIgnoreCase("Y") || choice.isEmpty())
          insertItem(); // recursive call to the insertItem() method to continue adding items
+
    }
 
    // static method to call object from Inventory--calls delete method
    private static void deleteItem() {
-      clearScreen();
+      clearScreen(); // clears the console
       boolean callMethod = false;
 
-      System.out.print("Enter an item you would like to remove from the database: ");
+      System.out.print("Enter an item you would like to remove from the inventory: ");
+      String choice = "";
       String item = input.nextLine().trim();
 
       // if the item exists in the inventory
@@ -120,12 +133,17 @@ public class InventoryManagement {
          // if the user wants to remove another item (either chooses 'Y' or enters an empty input)
          if (choice.equalsIgnoreCase("Y") || choice.isEmpty())
             deleteItem(); // recursive call to the deleteItem() method to continue removing items
+
       }
+
+      // if user chooses to add an item, calls insertItem()
+      if (callMethod) insertItem();
    }
 
    // static method to call object from Inventory--calls checking method
    private static void checkItemQuantity() {
-      clearScreen();
+      clearScreen(); // clears the console
+
 
       // fetches and displays the current inventory
       fetchInventory();
@@ -150,6 +168,7 @@ public class InventoryManagement {
          if (choice.equalsIgnoreCase("Y"))
             insertItem(); // call the insertItem() method to add a new item
       }
+
    }
 
    // static method to fetch all items in Inventory
@@ -157,7 +176,9 @@ public class InventoryManagement {
       System.out.println("+-------------------------+");
       System.out.println("| Item           | Qty.   |");
       System.out.println("+-------------------------+");
-      // iterate over each entry in the inventory items map
+
+      /* Output prompt or visualized items and quantity table  */
+
       for (Map.Entry<String, Integer> entry : inventory.getItems().entrySet())
          // print the item name and quantity in a formatted table row
          System.out.printf("| %-14s | %-6d |\n", entry.getKey(), entry.getValue());
@@ -168,7 +189,7 @@ public class InventoryManagement {
    public static void main(String[] args) {
       boolean exit = false;
       do {
-         clearScreen();
+         clearScreen(); // clears the console
 
          // UI (console)
          System.out.println("+-----------------------------+");
@@ -200,12 +221,12 @@ public class InventoryManagement {
                break;
             // terminates loop from while loop in main
             default:
-               System.out.println(
-                     "The choice you have chosen is either not available from the list \n or is not valid. ");
+               System.out.println("The option you have chosen is either not available from the menu \n or is not valid. ");
                break;
          }
       } while (!exit);
-      clearScreen();
+      /* output prompt for exiting the program */
+      clearScreen(); // clears the console
       System.out.println("----------------------------------------------------");
       System.out.println("Program Ended. ");
       System.out.print("Thank you for using the Inventory Management System.");
