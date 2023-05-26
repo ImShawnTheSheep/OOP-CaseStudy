@@ -10,14 +10,14 @@ public class InventoryManagement {
    // static method to call object from Inventory--calls add method
    private static void insertItem() {
       Util.clearScreen(); // clears the console
+      String choice = "";
 
-      System.out.print("Enter an item you would like to save into the inventory: ";
+      System.out.print("Enter an item you would like to save into the inventory: ");
       String item = input.nextLine().trim();
       if (!inputCatch(item)) {
          insertItem();
          return;
       }
-
 
       // checks if the item already is in the inventory and will ask the user if they
       // want to the existing quantity
@@ -35,9 +35,10 @@ public class InventoryManagement {
       }
 
       System.out.print("\nWould you like to add another item? (Y/N): ");
-      String choice = input.nextLine().trim();
+      choice = input.nextLine().trim();
 
-      // if the user wants to add another item (either chooses 'Y' or enters an empty input)
+      // if the user wants to add another item (either chooses 'Y' or enters an empty
+      // input)
       if (choice.equalsIgnoreCase("Y") || choice.isEmpty())
          insertItem(); // recursive call to the insertItem() method to continue adding items
    }
@@ -53,7 +54,6 @@ public class InventoryManagement {
          deleteItem();
          return;
       }
-
 
       // Checks if the inventory does not have the item
       if (!inventory.containsItem(item)) {
@@ -131,7 +131,6 @@ public class InventoryManagement {
          System.out.printf("| %-14s | %-6d |\n", entry.getKey(), entry.getValue());
       System.out.println("+-------------------------+");
    }
-
 
    /* main method containing the menu console UI, and switch case operations */
 
