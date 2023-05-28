@@ -7,6 +7,7 @@ This repository contains the case study files for our Object-Oriented Programmin
 - [Introduction](https://github.com/ImShawnTheSheep/OOP-CaseStudy#introduction)
 - [Folder Structure](https://github.com/ImShawnTheSheep/OOP-CaseStudy#folder-structure)
 - [Case Study Overview](https://github.com/ImShawnTheSheep/OOP-CaseStudy#case-study-overview)
+- [Getting Started](https://github.com/ImShawnTheSheep/OOP-CaseStudy#getting-started)
 - [Our Team](https://github.com/ImShawnTheSheep/OOP-CaseStudy#our-team)
 
 ## Introduction
@@ -20,9 +21,15 @@ In this case study, we explore implementation of two real-world systems using ob
 ```
 .
 ├── Inventory Management System/
+│   ├── Inventory.java
 │   ├── InventoryManagement.java
+│   ├── Run.java
+│   ├── Util.java
 ├── Library Management System/
+│   ├── Book.java
+│   ├── Library.java
 │   ├── LibraryManagement.java
+│   ├── Run.java
 ├── .gitignore
 ├── CODEOWNERS
 ├── README.md
@@ -52,6 +59,34 @@ Additional Requirements:
 - The program must utilize the practice of using proper modifiers and encapsulation.
 
 The details inputted by the user after the program execution is **not required** to be persistent.
+
+## Getting Started
+
+### Prerequisites
+
+- [Java Development Kit 20](https://www.oracle.com/java/technologies/downloads/#java20)
+- [Text Editor/IDE](https://www.turing.com/blog/best-java-ides-and-editors/)
+
+### Installation
+
+1. Clone the repository.
+
+```sh
+git clone https://github.com/ImShawnTheSheep/OOP-CaseStudy.git
+```
+
+2. Open the project folder using your preferred text editor/IDE.
+
+3. Run the program.
+```sh
+cd <folder_name>
+```
+```sh
+javac Run.java
+```
+```sh
+java Run
+```
 
 ## Our Team
 
