@@ -222,20 +222,22 @@ public class InventoryManagement {
    // return false;
    // }
 
-   // // exception for alphanumeric value
-   // if (!item.matches("[a-zA-Z]+")) {
-   // System.out.println("Invalid input. Please enter a valid string!");
-   // Util.pause();
-   // return false;
-   // }
-   // return true;
+   // exception for alphanumeric value
+   if(!item.matches("[a-zA-Z]+"))
 
-   // // exception for special characters
-   // } catch (Exception e) {
-   // System.out.println("Invalid input. Please enter a valid string.");
-   // Util.pause();
-   // return false;
-   // }
+   {
+      System.out.println("Invalid input. Please enter a valid string!");
+      Util.pause();
+      return false;
+   }return true;
 
-   // }
-}
+   // exception for special characters
+   }catch(
+   Exception e)
+   {
+      System.out.println("Invalid input. Please enter a valid string.");
+      Util.pause();
+      return false;
+   }
+
+}}
